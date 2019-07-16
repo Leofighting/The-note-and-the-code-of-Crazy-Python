@@ -1,0 +1,23 @@
+# 以下是笔记的链接， 使用幕布app制作
+
+https://mubu.com/doc/kil6BOBUf0
+https://mubu.com/doc/eLqugzLw10
+https://mubu.com/doc/9cvRXpGg30
+
+# 习题代码
+# 用户输入一个整数n，生成长度为n的列表，将n个随机数放入列表中
+
+import random
+
+length = int(input("请输入列表的长度： "))
+# num_list = []
+#
+# for i in range(length):
+#     num = random.randint(0, 1000)
+#     num_list.append(num)
+#
+# print(num_list)
+
+# 第2种方法
+num_list = [random.randint(1, 1000) for i in range(length)]
+print(num_list)
