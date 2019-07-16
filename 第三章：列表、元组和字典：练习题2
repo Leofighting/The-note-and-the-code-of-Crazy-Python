@@ -1,0 +1,14 @@
+# 以下是笔记的链接， 使用幕布app制作
+
+https://mubu.com/doc/kil6BOBUf0
+https://mubu.com/doc/eLqugzLw10
+https://mubu.com/doc/9cvRXpGg30
+
+# 习题代码
+# 给定一个list，将该列表的从start 到 end 的所有元素复制到另一个list中
+
+lst = list(range(100))
+start = int(input("请输入切片的开始位置： "))
+end = int(input("请输入切片的结束位置： "))
+lst2 = lst[start: end]
+print(lst2)
