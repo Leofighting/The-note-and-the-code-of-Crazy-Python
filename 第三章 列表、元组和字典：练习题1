@@ -1,0 +1,22 @@
+# 以下是笔记的链接， 使用幕布app制作
+
+https://mubu.com/doc/kil6BOBUf0
+https://mubu.com/doc/eLqugzLw10
+https://mubu.com/doc/9cvRXpGg30
+
+# 习题代码
+# 提示用户输入N个字符串，将它们封装成元素，然后计算并输入该元组乘以3的结果
+# 再计算并输出该元组加上（"fkjava", "crazyit"）
+
+str_list = []
+tup = ("fkjaava", "crazyit")
+
+print("请输入5个元素")
+
+for i in range(5):
+    str_list.append(input("请输入第 %d 个元素： " % (i+1)))
+    
+str_tuple = tuple(str_list)
+print(str_tuple)
+print(str_tuple * 3)
+print(str_tuple + tup)
