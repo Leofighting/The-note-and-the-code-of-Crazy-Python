@@ -1,0 +1,26 @@
+# 以下是笔记的链接， 使用幕布app制作
+
+https://mubu.com/doc/kil6BOBUf0
+https://mubu.com/doc/eLqugzLw10
+https://mubu.com/doc/9cvRXpGg30
+
+# 习题代码
+# 用户输入一个整数n，生成长度为n的列表，将n个随机的奇数放入列表中
+
+from random import randint
+
+length = int(input("请输入元素个数： "))
+# num_list = []
+#
+# for i in range(length):
+#     num = randint(1, 200)
+#     if num % 2 == 0:
+#         num_list.append(num + 1)
+#     else:
+#         num_list.append(num)
+#
+# print(num_list)
+
+# 第2种方法
+num_list = [randint(1, 100) * 2 + 1 for i in range(length)]
+print(num_list)
