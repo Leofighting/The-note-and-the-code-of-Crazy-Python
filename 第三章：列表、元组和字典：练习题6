@@ -1,0 +1,24 @@
+[笔记 from 幕布app](https://mubu.com/doc/kil6BOBUf0)
+
+# 用户输入N个字符串
+# 将这些字符串收集到列表中，然后去除其中重复的字符串后输出列表
+
+length = int(input("请输入列表长度： "))
+my_list = []
+
+for i in range(length):
+    my_list.append(input("请输入字符串： "))
+
+print(my_list)
+
+new_list = []
+
+# for input_str in my_list:
+#     if input_str not in new_list:
+#         new_list.append(input_str)
+#
+# print(new_list)
+
+# 第2种方法
+new_list = list({}.fromkeys(my_list).keys())
+print(new_list)
