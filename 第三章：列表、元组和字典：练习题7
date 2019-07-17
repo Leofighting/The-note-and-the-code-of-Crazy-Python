@@ -1,0 +1,23 @@
+[笔记 from 幕布app](https://mubu.com/doc/kil6BOBUf0)
+
+
+# 用户输入以空格分隔的多个整数，程序将这些整形转换为元组元素
+# 并输出该元组及其hash值
+
+my_tuple = tuple(input("请输入一段以空格分开的整数：").split())
+
+print(my_tuple)
+print(hash(my_tuple))
+
+
+
+# 用户随机输入N个大写字母， 程序使用dict统计用户输入的每个字母的次数
+
+char_list = input("请输入以空格隔开的大写字符： ").split()
+char_dict = {}.fromkeys(char_list)
+print(char_dict)
+
+for char in char_dict.keys():
+    char_dict[char] = char_list.count(char)
+
+print(char_dict)
