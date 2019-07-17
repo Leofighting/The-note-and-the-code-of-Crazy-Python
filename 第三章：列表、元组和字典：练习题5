@@ -1,0 +1,20 @@
+[笔记 from 幕布app](https://mubu.com/doc/kil6BOBUf0)
+
+
+
+# 用户输入一个整数n，生成长度为n的列表，将n个随机的大写字符放入列表中
+
+from random import randint
+
+length = int(input("请输入列表长度： "))
+# letter_list = []
+#
+# for i in range(length):
+#     num = randint(65, 65+25)
+#     letter_list.append(chr(num))
+#
+# print(letter_list)
+
+# 第2种方法
+letter_list = [chr(randint(65, 65+25)) for i in range(length)]
+print(letter_list)
