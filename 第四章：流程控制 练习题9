@@ -1,0 +1,31 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 使用循环输出空心菱形*
+
+while True:
+    lines = int(input("请输入打印行数（奇数），或者输入数字“0”退出："))
+
+    if lines % 2 == 0:
+        import sys
+        sys.exit(0)
+
+    half_lines = lines // 2 + 1
+
+    for i in range(half_lines):
+        print(" " * (half_lines - i), end="")
+        if i == 0:
+            print("*")
+        else:
+            print("*", end="")
+            print(" " * (2*i-1), end="")
+            print("*")
+
+    for i in range(half_lines-1):
+        print(" " * (i+2), end="")
+        if i == half_lines - 2:
+            print("*")
+        else:
+            print("*", end="")
+            print(" " * (lines - 4 - 2 * i), end="")
+            print("*")
