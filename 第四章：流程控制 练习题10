@@ -1,0 +1,26 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 用户输入自己的成绩，程序会自动判断该成绩的类型：
+# 成绩大于90份用A表示
+# 80-89分，用B表示
+# 70-79分，用C表示
+# 其他的分数，用D表示
+
+
+while True:
+    score = input("请输入您的分数或者输入“exit”退出系统：")
+    if score == "exit":
+        import sys
+        sys.exit(0)
+
+    if float(score) >= 90:
+        print("A")
+    elif 80 <= float(score) < 90:
+        print("B")
+    elif 70 <= float(score) < 80:
+        print("C")
+    else:
+        print("D")
+
+
