@@ -1,0 +1,32 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 给定一个奇数，使得输出的一个二维列表，横竖斜的总和相等
+
+
+size = int(input("输入要打印的size（奇数）："))
+array = [[0] * size]
+
+# 创建一个长度为size * size 的二维列表
+for i in range(size-1):
+    array += [[0] * size]
+row, col = 0, size // 2
+
+for i in range(1, size * size + 1):
+    array[row][col] = i
+    if i % size == 0:
+        row += 1
+    elif row == 0:
+        row = size - 1
+        col += 1
+    elif col == size - 1:
+        row -= 1
+        col = 0
+    else:
+        row -= 1
+        col += 1
+
+for i in range(size):
+    for j in range(size):
+        print("%02d" % array[i][j], end=" ")
+    print()
