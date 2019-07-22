@@ -1,0 +1,23 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 循环输出菱形的*
+
+while True:
+
+    lines = int(input("请输入要打印的行数（奇数）或输入数字“0”退出："))
+    if lines % 2 == 0:
+        import sys
+        sys.exit(0)
+
+    half_lines = lines // 2 + 1
+
+    # 打印上半部分
+    for i in range(half_lines):
+        print(" " * (half_lines - i), end="")
+        print("*" * (2*i+1))
+
+    # 打印下半部分
+    for i in range(half_lines - 1):
+        print(" " * (i+2), end="")
+        print("*" * (lines - 2 - 2 * i))
