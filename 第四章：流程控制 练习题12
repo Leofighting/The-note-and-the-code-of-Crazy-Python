@@ -1,0 +1,20 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 输入一行字符，分别统计出其中英文字母，数字，及其他字符的个数
+
+input_str = input("请输入一个字符串：")
+
+char_num, digit_num, other_num = 0, 0, 0
+
+for c in input_str:
+    if c.isdigit():
+        digit_num += 1
+    elif c.isalpha():
+        char_num += 1
+    else:
+        other_num += 1
+
+print("字母个数为：", char_num)
+print("数字个数为：", digit_num)
+print("其他字符个数：", other_num)
