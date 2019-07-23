@@ -1,0 +1,20 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个函数，该函数可以接收一个list作为参数，该函数用于去除list中重复的元素
+
+def remove_duplicate(source_list):
+    # 第一种方法
+    # new_list = list({}.fromkeys(source_list).keys())
+    # return new_list
+    #第二种方法
+    new_list = []
+    [new_list.append(i) for i in source_list if i not in new_list]
+    return new_list
+
+
+length = int(input("请输入列表的长度："))
+my_list = []
+for i in range(length):
+    my_list.append(input("请输入字符串："))
+print(remove_duplicate(my_list))
