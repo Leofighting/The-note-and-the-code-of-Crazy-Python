@@ -1,0 +1,17 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个fn(n)的函数，该函数返回n的阶层
+
+
+def fn(n):
+    result_list = [1]
+    for i in range(n):
+        result_list.append(result_list[-1] * len(result_list))
+    return result_list[-1]
+
+
+n = int(input("请输入一个整数："))
+
+result = fn(n)
+print(result)
