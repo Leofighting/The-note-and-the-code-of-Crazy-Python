@@ -1,0 +1,23 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个函数，该函数可判断一个年份是否为闰年。
+# 如果是闰年，则返回True  否则返回False
+
+
+def is_leap(year):
+    year = int(year)
+    if year % 4 == 0 and year % 100 != 0:
+        return True
+    elif year % 400 == 0:
+        return True
+    else:
+        return False
+
+
+while True:
+    input_year = input("请输入一个年份或者“exit”退出程序：")
+    if input_year == "exit":
+        break
+    leap = is_leap(input_year)
+    print(f"{input_year} 是闰年吗？ {leap}")
