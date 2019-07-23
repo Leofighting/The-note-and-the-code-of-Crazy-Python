@@ -1,0 +1,17 @@
+[笔记 from 幕布app](https://mubu.com/doc/iI0MadiLv0)
+
+
+# 判断 101—200 之间有多少个素数，并输出所有的质数
+
+prime = []
+
+for i in range(101, 201):
+    is_prime = True
+    for j in range(2, int(i**0.5)+1):
+        if i % j == 0:
+            is_prime = False
+    if is_prime:
+        prime.append(i)
+
+print("101--200之间一共有 %d 个素数" % len(prime))
+print("这些素数分别是：", prime)
