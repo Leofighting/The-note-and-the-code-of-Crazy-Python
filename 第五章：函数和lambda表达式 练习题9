@@ -1,0 +1,22 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+from random import randint
+
+
+def fn(n):
+    i, letter_list = 0, []
+    while True:
+        num = randint(65, 65+25)
+        # 如果该随机数不存在列表中，则转换为大写字母后添加到列表中
+        if num not in letter_list:
+            letter_list.append(chr(num))
+            i += 1
+        if i == n:
+            break
+    # 以元组形式返回
+    return tuple(letter_list)
+
+
+n = int(input("请输入一个整数（n）："))
+print(fn(n))
