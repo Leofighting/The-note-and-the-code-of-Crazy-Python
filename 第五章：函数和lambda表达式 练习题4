@@ -1,0 +1,26 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+def count_str_char(my_str):
+    char_num, digit_num, space_num, other_num = 0, 0, 0, 0
+    for c in my_str:
+        if c.isalpha():
+            char_num += 1
+        elif c.isdigit():
+            digit_num += 1
+        elif c.isspace():
+            space_num += 1
+        else:
+            other_num += 1
+    return char_num, digit_num, space_num, other_num
+
+
+while True:
+    str_1 = input("请输入一个字符串或者输入“exit”退出系统： ")
+    if str_1 == "exit":
+        break
+    char_num, digit_num, space_num, other_num = count_str_char(str_1)
+    print("字母的个数为： ", char_num)
+    print("数字的个数为： ", digit_num)
+    print("空格的个数为： ", space_num)
+    print("其他字符的个数为： ", other_num)
