@@ -1,0 +1,19 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个函数，返回1~n的立方和
+
+
+def f_sum(n):
+    a_sum = 0
+    if n < 2:
+        import sys
+        sys.exit(0)
+    a_sum = 1
+    for i in range(2, n+1):
+        a_sum += i**3
+    return a_sum
+
+
+num = int(input("请输入一个大于1的整数： "))
+print(f"1-{num}的立方和为：{f_sum(num)}")
