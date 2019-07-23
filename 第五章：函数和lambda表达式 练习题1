@@ -1,0 +1,18 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个函数
+# 该函数可接收一个list作为参数，该函数使用直接选择排序对list排序
+
+
+def choose_sort(lst):
+    lst_length = len(lst)
+    for i in range(lst_length):
+        for j in range(i+1, lst_length):
+            if lst[j] < lst[i]:
+                lst[i], lst[j] = lst[j], lst[i]
+
+
+lst1 = [2, 8, 3, 9, 33, 21, 4, 15, 6, 32, 22]
+choose_sort(lst1)
+print(lst1)
