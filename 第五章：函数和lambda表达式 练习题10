@@ -1,0 +1,24 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+
+# 定义一个fn(n)函数，其中n表示输入n行n列的矩阵
+# 在输出时，先输出n行n列的矩阵，再输出该矩阵的转置形式
+
+
+def fn(n):
+    # 输出矩阵
+    for i in range(n):
+        for j in range(n):
+            print(" %2d " % (i * n + j + 1), end="")
+        print()
+    print("-" * (4*n))
+    # 输出转置矩阵
+    for i in range(n):
+        for j in range(n):
+            print(" %2d " %(j * n + i + 1), end="")
+        print()
+
+
+n = int(input("请输入整数n:"))
+fn(n)
