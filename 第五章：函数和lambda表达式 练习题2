@@ -1,0 +1,22 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+# 定义一个函数，该函数可接收一个list作为函数
+# 该函数使用冒泡排序对list排序
+
+
+def bubble_sort(lst):
+    lst_len = len(lst)
+    for i in range(lst_len):
+        is_sort = True
+        for j in range(lst_len-i-1):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+                is_sort = False
+        if is_sort:
+            return
+
+
+lst1 = [44, 22, 32, 2, 8, 33, 54, 3]
+bubble_sort(lst1)
+print(lst1)
