@@ -1,0 +1,23 @@
+[第五章笔记  from 幕布app](https://mubu.com/doc/nCO4AX0An0)
+
+
+from random import randint
+
+
+def fn(n):
+    i, num_list = 0, []
+    while True:
+        num = randint(1, 100)
+        # 如果元素不相同，则增加到列表中
+        if num not in num_list:
+            num_list.append(num)
+            i += 1
+        if i == n:
+            break
+    # 以元组形式返回
+    return tuple(num_list)
+
+
+length = int(input("请输入一个整数（n）："))
+print(fn(length))
+
