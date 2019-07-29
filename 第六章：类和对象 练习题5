@@ -1,0 +1,39 @@
+[第六章笔记 from 幕布APP](https://mubu.com/doc/lragbD1ct0)
+
+
+class Transport(object):
+    def move(self, distance):
+        print("我移动了 %s 千米" % distance)
+
+
+class Car(Transport):
+    def __init__(self, name):
+        self.name = name
+
+    def move(self, distance):
+        print("%s 在马路上开了 %s 千米" % (self.name, distance))
+
+
+class Train(Transport):
+    def __init__(self, speed):
+        self.speed = speed
+
+    def move(self, distance):
+        print("我以速度 %s 在铁轨上走了 %s 千米" % (self.speed, distance))
+
+
+class Plane(Transport):
+    def fly(self, distance):
+        print("我在天空飞了 %s 千米" % distance)
+
+
+if __name__ == "__main__":
+    c = Car("BMW")
+    c.move(30.2)
+
+    t = Train(300)
+    t.move(230.5)
+
+    p = Plane()
+    p.move(3440.8)
+    p.fly(3440.8)
