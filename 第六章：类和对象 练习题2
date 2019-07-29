@@ -1,0 +1,41 @@
+[第六章笔记 from 幕布APP](https://mubu.com/doc/lragbD1ct0)
+
+
+
+# 利用第1题定义的Student类，定义一个列表保存多个Student对象作为通讯录数据
+# 程序可通过name、email、address查询，如果找不到数据，则进行友好提示
+
+
+from ex_6_9_1 import Student
+
+
+contacts = [Student("孙悟空", 500, "male", "020-28309358", "灵台方寸山", "sun@crazyit.org"),
+            Student("牛魔王", 650, "male", "020-28309378", "积雷山摩云洞", "niu@crayit.org"),
+            Student("白骨精", 23, "female", "13699881122", "白骨岭", "bai@crazyit.org"),
+            Student("猪八戒", 500, "male", "13599881122", "福临山山云栈洞", "zhu@crazyit.org")]
+
+
+def find_by_name(name):
+    return [x for x in contacts if name in x.name]
+
+
+def find_by_email(email):
+    return [x for x in contacts if email in x.email]
+
+
+def find_by_address(address):
+    return [x for x in contacts if address in x.address]
+
+
+if __name__ == "__main__":
+    t = input("请输入查找的方式，名字(n)，Email(e)，地址(a)：")
+    k = input("请输入你要查找的关键字：")
+
+    if t == "n":
+        print(find_by_name(k))
+    elif t == "e":
+        print(find_by_email(k))
+    elif t == "a":
+        print(find_by_address(k))
+    else:
+        print("输入有误，请重新输入：")
