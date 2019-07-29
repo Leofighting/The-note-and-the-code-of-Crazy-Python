@@ -1,0 +1,41 @@
+[第六章笔记 from 幕布APP](https://mubu.com/doc/lragbD1ct0)
+
+
+# 编写一个学生类，提供name、age、gender、phone、address、email等属性
+# 为学生类提供带所有成员变量的构造器，为学生类提供方法
+# 用于描绘吃喝玩睡等行为
+
+
+class Student(object):
+    def __init__(self, name, age, gender, phone, address, email):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.phone = phone
+        self.address = address
+        self.email = email
+
+    def eat(self, food):
+        print(f"{self.name} 正在吃 {food}")
+
+    def drink(self, drink):
+        print(f"{self.name} 正在喝 {drink}")
+
+    def play(self, other, sport):
+        print(f"我今年{self.age}岁，正和{other} 玩{sport}")
+
+    def sleep(self):
+        print(f"{self.name} 在 {self.address} 睡觉")
+
+    def __repr__(self):
+        return "Student(name = %s, age = %d, phone = %s, address = %s, email = %s)" \
+            % (self.name, self.age, self.phone, self.address, self.email)
+
+
+if __name__ == "__main__":
+    stu = Student("孙悟空", 500, "male", "020-28309358", "灵台方寸山", "sun@crazyit.org")
+
+    stu.eat("桃子")
+    stu.drink("美酒")
+    stu.play("牛魔王", "腾云驾雾")
+    stu.sleep()
