@@ -1,0 +1,47 @@
+[第六章笔记 from 幕布APP](https://mubu.com/doc/lragbD1ct0)
+
+
+
+# 定义代表三位笛卡尔坐标系上某个点的Points类（包括x,y,Z三个属性）
+# 为该类提供一个方法，可接收b,c,d三个参数，用于计算当前点,b,c组成的面与b,c,d组成的面之间的夹角
+# 提示：cos(夹角）=（X*Y）/|X||Y|，其中 X=AB*BC,Y=BC*CD,X-Y代表X与Y的点积，AB*BC代表AB与BC的叉乘
+
+import math
+
+
+class Points(object):
+    """描述点的类"""
+    def __init__(self, x, y, z):
+        """构造器"""
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __sub__(self, no):
+        """为减法提供支持的方法"""
+        return Points((self.x - no.x), (self.y - no.y), (self.z - no.z))
+
+    def dot(self, no):
+        """点积"""
+        return (self.x * no.x) + (self.y * no.y) + (self.z * no.z)
+
+    def cross(self, no):
+        """叉积"""
+        return Points((self.y*no.z-self.z*no.y), (self.z*no.x-self.x*no.z), (self.x*no.y - self.y*no.x))
+
+    def absolute(self):
+        return pow((self.x**2+self.y**2+self.z**2), 0.5)
+
+
+if __name__ == "__main__":
+    points = list()
+    print("请依次输入4个点的x y z（中间以空格隔开）:")
+    for i in range(4):
+        a = list(map(float, input().split()))
+        points.append(a)
+    a, b, c, d = Points(*points[0]), Points(*points[1]), Points(*points[2]), Points(*points[3])
+    X = (b-a).cross(c-b)
+    Y = (c-b).cross(d-c)
+    angle = math.acos(X.dot(Y) / (X.absolute() * Y.absolute()))
+
+    print("%.2f" % math.degrees(angle))
