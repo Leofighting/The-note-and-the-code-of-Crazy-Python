@@ -1,0 +1,56 @@
+[第六章笔记 from 幕布APP](https://mubu.com/doc/lragbD1ct0)
+
+
+
+# 定义代表二维坐标系上的某个点的Point类（包括x、y两个属性），为该类提供一个方法用于两个Point之间的距离
+# 再提供一个方法用于判断三个Point组成的三角形是钝角、锐角还是直角三角形
+
+
+class Point(object):
+    """描述点的类"""
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def distance(self, other):
+        """计算两点间的距离"""
+        return ((self.x - other.x) ** 2 + (self.y - other.y) ** 2) ** 0.5
+
+    def judge_triangle(self, p1, p2):
+        """判断3个点组成的三角形"""
+        self_p1 = self.distance(p1)
+        self_p2 = self.distance(p2)
+        p1_p2 = p1.distance(p2)
+        # 如果self_p1的距离最大
+        if self_p1 > self_p2 and self_p1 > p1_p2:
+            if self_p1 > (self_p2 + p1_p2):
+                print("不是三角形")
+            else:
+                print("钝角三角形") if self_p1 ** 2 > (self_p2 ** 2 + p1_p2 ** 2) \
+                    else print("锐角三角形") if self_p1 ** 2 < (self_p2 ** 2 + p1_p2 ** 2)\
+                    else print("直角三角形")
+        # 如果self_p2的距离最大
+        if self_p2 > self_p1 and self_p2 > p1_p2:
+            if self_p2 > (self_p1 + p1_p2):
+                print("不是三角形")
+            else:
+                print("钝角三角形") if self_p2 ** 2 > (self_p1 ** 2 + p1_p2 ** 2) \
+                    else print("锐角三角形") if self_p2 ** 2 < (self_p1 ** 2 + p1_p2 ** 2) \
+                    else print("直角三角形")
+        # 如果p1_p2的距离最大
+        if p1_p2 > self_p1 and p1_p2 > self_p2:
+            if p1_p2 > (self_p1 + self_p2):
+                print("不是三角形")
+            else:
+                print("钝角三角形") if p1_p2 ** 2 > (self_p1 ** 2 + self_p2 ** 2) \
+                    else print("锐角三角形") if p1_p2 ** 2 < (self_p1 ** 2 + self_p2 ** 2) \
+                    else print("直角三角形")
+
+    def __repr__(self):
+        return "Point(x=%s, y=%s)" % (self.x, self.y)
+
+
+if __name__ == "__main__":
+    pt = Point(1, 1)
+    print(pt.distance(Point(2, 3)))
+    pt.judge_triangle(Point(4, 1), Point(5, 5))
