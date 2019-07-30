@@ -1,0 +1,25 @@
+[第七章笔记  异常  from  幕布APP](https://mubu.com/doc/9I7wsEmLV0)
+
+
+# 提示用户输入一个N，表示用户接下来要输入N个字符串
+# 程序尝试将用户输入的每一个字符串用空格分成两个整数
+# 并结算这两个整数整除的结果
+# 要求：使用异常处理机制来处理用户输入的各种错误情况，并提示用户重新输入
+
+
+str_n = input("请输入整数N：")
+try:
+    n = int(str_n)
+    print(n)
+    i = 0
+    while True:
+        try:
+            a, b = input("请输入两个整数（以空格隔开）：").split()
+            print(int(a) // int(b))
+            i += 1
+            if i >= n:
+                break
+        except:
+            print("请务必输入以空格隔开的两个整数")
+except:
+    print("请输入整数N：")
