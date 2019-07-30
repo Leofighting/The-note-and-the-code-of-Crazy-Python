@@ -1,0 +1,27 @@
+[第七章笔记  异常  from  幕布APP](https://mubu.com/doc/9I7wsEmLV0)
+
+
+# 提示用户输入一个整数，如果用户输入的整数是奇数，则输出“有趣”
+# 如果用户输入的是偶数，且在2~5之间，则打印“没意思”；
+# 如果用户输入的整数是偶数，且在6~20之间，则输出“有趣”
+# 如果输入的整数是其它偶数，则打印“没意思”
+# 要求：使用异常处理机制来处理用户输入的各种错误情况
+
+
+while True:
+    str_n = input("请输入整数N或者输入“exit” 退出程序：")
+    if str_n == "exit":
+        break
+
+    try:
+        n = int(str_n)
+        if n % 2 != 0:
+            print("有趣")
+        elif 2 < n < 5:
+            print("没意思")
+        elif 6 < n < 20:
+            print("有趣")
+        else:
+            print("没意思")
+    except:
+        print("请输入整数N：")
