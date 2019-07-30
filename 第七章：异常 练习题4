@@ -1,0 +1,28 @@
+[第七章笔记  异常  from  幕布APP](https://mubu.com/doc/9I7wsEmLV0)
+
+
+# 提示用户输入x1, y1, x2, y2, x3, y3 六个数值，分别代表三个点的坐标
+# 程序判断这三个点是否在同一条直线上。
+# 要求：使用异常处理机制处理用户输入的各种错误情况
+# 如果三个点不在同一条直线上，则程序出现异常
+
+
+while True:
+    xy_str = input("请输入3个点的x y值（用空格隔开）或者输入“exit”退出程序：")
+    if xy_str == "exit":
+        import sys
+        sys.exit(0)
+    try:
+        x1_str, y1_str, x2_str, y2_str, x3_str, y3_str = xy_str.split()
+        x1, y1, x2, y2, x3, y3 = float(x1_str), float(y1_str),\
+                                 float(x2_str), float(y2_str), float(x3_str), float(y3_str)
+        if x1 == 0 and x2 == 0 and x3 == 0:
+            print("三个点在同一条直线上")
+        elif 0 in (x1, x2, x3):
+            print("三个点不在同一条直线上")
+        elif y1 / x1 == y2 / x2 == y3 / x3:
+            print("三个点在同一条直线上")
+        else:
+            print("三个点不在同一条直线上")
+    except:
+        print("必须输入以空格分隔的6个数")
